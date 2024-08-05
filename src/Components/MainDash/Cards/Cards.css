@@ -1,0 +1,18 @@
+.Cards {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  padding: 1rem;
+}
+
+.CardsParentContainer:nth-child(1) .Compact .Title {
+  margin-left: .8rem;
+}
+
+ .Title {
+  margin-top: 0.5rem;
+}
+
+.CardsParentContainer {
+  width: 100%;
+}

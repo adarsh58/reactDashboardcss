@@ -4,7 +4,13 @@ import logo from '../../imgs/logo.png'
 import { SidebarData } from '../Data/Data';
 import { UilSignOutAlt } from "@iconscout/react-unicons";
 const SideBar = () => {
+  //State
   const [selected, setSelected] = useState(0);
+  //Functions
+  const onItemClick=(index)=>
+  {
+    setSelected(index);
+  }
   return (
     <div className="SideBar">
       <div className='Logo'>
@@ -18,15 +24,16 @@ const SideBar = () => {
         
           return (
             <div
-              className="menuItem active"
-              key={i}> 
+              className={selected===i?"MenuItem active":"MenuItem"}
+              key={i}
+              onClick={()=>onItemClick(i)}> 
             <e.icon />
               <span>{e.heading}</span>
             </div>
           )
         })}
       </div>
-      <div className="MenuItem">
+      <div className="MenuItemLast">
         <UilSignOutAlt />
       </div>
 

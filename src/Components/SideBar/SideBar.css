@@ -31,8 +31,8 @@ align-items: center;
     display: flex;
     margin-top: 1rem;
     flex-direction: column;
-    /* border: .2px solid black; */
     gap: 2rem;
+    
 }
 .MenuItem{
     display: flex;
@@ -45,6 +45,26 @@ align-items: center;
     height: 2.5rem;
     font-size: 14px;
     border-radius: 8px;
+    transition: all 300ms ease;
+
+
+}
+
+.Menu .MenuItem:last-child{
+    bottom: 2.3rem;
+}
+
+.MenuItemLast{
+    margin-top: 1.5rem;
+    align-items: center;
+    font-size: 14px;
+    margin-left: 1rem;
+    transition: all 300ms ease;
+    bottom: 2.3rem;
+     width: 4rem;
+    height: 4rem;
+    position: absolute;  
+    
 }
 
 
@@ -59,5 +79,5 @@ align-items: center;
     width: 5px;
     content: '';
     height: 100%;
-    margin-left: 8px;
+    margin-left: 1px;
 }

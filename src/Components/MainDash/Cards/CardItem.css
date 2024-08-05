@@ -1,0 +1,60 @@
+.Compact{
+display: flex;
+flex: 1;
+height: 7rem !important;
+color: white;
+position: relative;
+cursor: pointer;
+border-radius: 0.7rem;
+gap: 7rem;
+padding: 1rem;
+}
+.Compact:hover{
+box-shadow: none !important;
+
+}
+
+.RadialBar
+{
+display: flex;
+flex: 1;
+flex-direction: column;
+justify-content: flex-end;
+}
+
+.CircularProgressbar {
+    width: 4rem !important;
+    overflow: visible;
+  }
+  .CircularProgressbar-path {
+    stroke: white !important;
+    stroke-width: 12px !important;
+    filter: drop-shadow(2px 4px 6px white);
+  }
+
+  .CircularProgressbar-text {
+    fill: white !important;
+  }
+
+  .Details
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex:1
+  }
+  .Details>span{
+
+    font-weight: bold;
+    font-size: 17px;
+  }
+  .Details>span:nth-child(2){
+
+    font-weight: bold;
+    font-size: 22px;
+  }
+  .Details>span:nth-child(3){
+
+    font-weight: bold;
+    font-size: 10px;
+  }
