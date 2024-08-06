@@ -122,7 +122,7 @@ const Expanded = ({ param, setIsVisible }) => {
         background: param.color.backGround,
         boxShadow: param.color.boxShadow
       }} >
-        <div><UilTimes onClick={setIsVisible}/></div>
+        <div style={{alignSelf:'flex-end', cursor:'Pointer',color:'white'}}><UilTimes onClick={setIsVisible}/></div>
         <span className='Title'>{param.title}</span>
         <div className="ChartContainer">
           <Chart series={param.series} type='area' options={data.options}></Chart>
