@@ -8,52 +8,41 @@ import {
 } from "@iconscout/react-unicons";
 import Chart from "react-apexcharts";
 const CardItem = (props) => {
-  const [isVisible, setIsVisible] = useState(true);
-  const HandleCard = () => {
-    if (isVisible) {
-      setIsVisible(false)
+  const [isCompact,setIscompact]=useState(true);
+    const handleSize =()=>{
+      if(isCompact && !props.disableCompact)
+        {
+            props.handleDisableCompact(true);
+            setIscompact(false);
+        }
+        else if(!isCompact && props.disableCompact){
+            props.handleDisableCompact(false);
+            setIscompact(true);
+        }
     }
-    else { setIsVisible(true) }
-  }
 
   return (
     <LayoutGroup>
-      {isVisible ? <Compact param={props} setIsVisible={HandleCard} /> : <Expanded param={props} setIsVisible={HandleCard} />}
-
+      {isCompact ? <Compact param={props} handleSize={(e)=>handleSize(e)} /> : <Expanded param={props} handleSize={(e)=>handleSize(e)} />}
     </LayoutGroup>
   )
 
 }
-
-
-function Submenu({ children }) {
-  const [isOpen, setIsOpen] = useState(false)
-
-  return (
-    <motion.ul
-      layout
-      style={{ height: isOpen ? "auto" : 40 }}
-    >
-      Hello
-    </motion.ul>
-  )
-}
-
-const Compact = ({ param, setIsVisible }) => {
+const Compact = ({ param, handleSize }) => {
   return (
     <div >
       <div className="Compact" style={{
 
         background: param.color.backGround,
         boxShadow: param.color.boxShadow
-      }} onClick={setIsVisible}>
+      }} onClick={handleSize}>
         <div className="RadialBar">
           <CircularProgressbar value={param.barValue}
             text={`${param.barValue}%`} />
           <span className='Title'>{param.title}</span>
         </div>
-        <div className="Details">
-          <param.png />
+        <div className="CardDetails">
+          <param.png style= {{alignSelf:'flex-end', cursor:'Pointer',color:'white'}} />
           <span>{param.value}</span>
           <span>Updated 24hrs</span>
         </div>
@@ -64,7 +53,7 @@ const Compact = ({ param, setIsVisible }) => {
 
 }
 
-const Expanded = ({ param, setIsVisible }) => {
+const Expanded = ({ param, handleSize }) => {
   const data = {
     options: {
       chart: {
@@ -122,7 +111,7 @@ const Expanded = ({ param, setIsVisible }) => {
         background: param.color.backGround,
         boxShadow: param.color.boxShadow
       }} >
-        <div style={{alignSelf:'flex-end', cursor:'Pointer',color:'white'}}><UilTimes onClick={setIsVisible}/></div>
+        <div style={{alignSelf:'flex-end', cursor:'Pointer',color:'white'}}><UilTimes onClick={handleSize}/></div>
         <span className='Title'>{param.title}</span>
         <div className="ChartContainer">
           <Chart series={param.series} type='area' options={data.options}></Chart>
