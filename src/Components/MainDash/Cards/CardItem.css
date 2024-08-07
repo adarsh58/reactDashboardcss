@@ -36,31 +36,32 @@ justify-content: flex-end;
     fill: white !important;
   }
 
-  .Details
+  .CardDetails
   {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex:1
+    flex:1;
+    color: white;    
   }
-  .Details>span{
+  .CardDetails>span{
 
     font-weight: bold;
     font-size: 17px;
   }
-  .Details>span:nth-child(2){
+  .CardDetails>span:nth-child(2){
 
     font-weight: bold;
     font-size: 22px;
   }
-  .Details>span:nth-child(3){
+  .CardDetails>span:nth-child(3){
 
     font-weight: bold;
     font-size: 10px;
   }
 
   /* ExpandedCard */
-  .Expanded {
+   .Expanded {
     position: absolute;
     width: 50%;
     height: 50vh;
@@ -72,4 +73,4 @@ justify-content: flex-end;
     align-items: center;
     justify-content: space-around;
     padding: 1rem;
-  }
+  } 
